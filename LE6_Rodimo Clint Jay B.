@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int subtract(int a, int b) {
+    return a - b;
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int divide(int a, int b) {
+    return a / b;
+}
+
+int main() {
+    int num1, num2, result;
+    int choice;
+
+    while (1) {
+        printf("\nMultiple Functions to Perform Arithmetic Operations\n\n");
+
+        printf("Enter first number: ");
+        scanf("%d", &num1);
+
+        printf("Enter second number: ");
+        scanf("%d", &num2);
+
+        printf("\nChoose Operation:\n");
+        printf("[1] Addition\n");
+        printf("[2] Subtraction\n");
+        printf("[3] Multiplication\n");
+        printf("[4] Division\n");
+        printf("[5] Exit Program\n");
+
+        printf("\nEnter choice [1-5]: ");
+        scanf("%d", &choice);
+
+        if (choice == 1) {
+            result = add(num1, num2);
+            printf("\n%d + %d = %d\n", num1, num2, result);
+        }
+        else if (choice == 2) {
+            result = subtract(num1, num2);
+            printf("\n%d - %d = %d\n", num1, num2, result);
+        }
+        else if (choice == 3) {
+            result = multiply(num1, num2);
+            printf("\n%d * %d = %d\n", num1, num2, result);
+        }
+        else if (choice == 4) {
+            if (num2 != 0) {
+                result = divide(num1, num2);
+                printf("\n%d / %d = %d\n", num1, num2, result);
+            }
+            else {
+                printf("\nCannot divide by zero.\n");
+            }
+        }
+        else if (choice == 5) {
+            printf("\nExit Program\n");
+            break;
+        }
+        else {
+            printf("\nInvalid choice. Please choose 1-5.\n");
+        }
+    }
+
+    return 0;
+}
